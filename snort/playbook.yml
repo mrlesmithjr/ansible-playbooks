@@ -1,7 +1,7 @@
 ---
-- hosts: redis-nodes
+- hosts: snort-nodes
   become: true
   vars:
   roles:
-    - role: ansible-redis
+    - role: ansible-snort
   tasks:
