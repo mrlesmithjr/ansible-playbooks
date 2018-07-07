@@ -1,5 +1,5 @@
 ---
-- hosts: mysql-nodes
+- hosts: db_servers
   become: true
   vars:
   roles:
