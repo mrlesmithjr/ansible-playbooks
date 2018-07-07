@@ -2,3 +2,4 @@
 - src: https://github.com/mrlesmithjr/ansible-apache2
 - src: https://github.com/mrlesmithjr/ansible-base
 - src: https://github.com/mrlesmithjr/ansible-bootstrap
+- src: https://github.com/mrlesmithjr/ansible-mysql
