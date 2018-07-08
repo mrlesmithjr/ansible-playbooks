@@ -18,8 +18,7 @@ pipeline {
             reference: '',
             trackingSubmodules: false
           ]],
-          submoduleCfg: [],
-          userRemoteConfigs: scm.userRemoteConfigs
+          submoduleCfg: []
         ])
       }
     }
