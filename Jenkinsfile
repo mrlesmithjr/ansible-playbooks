@@ -17,7 +17,7 @@ node {
             playbook: '${WORKSPACE}/bootstrap/playbook.yml',
             colorized: true,
             credentialsId: '${ansibleCredsId}',
-            forks: '${ansibleForks}'
+            forks: ${ansibleForks}
             )
         }
       }
