@@ -8,7 +8,7 @@ pipeline {
       steps {
         checkout([
           $class: 'GitSCM',
-          branches: [[name: '*/master']],
+          branches: scm.branches,
           doGenerateSubmoduleConfigurations: false,
           extensions: [[
             $class: 'SubmoduleOption',
@@ -19,7 +19,7 @@ pipeline {
             trackingSubmodules: true
           ]],
           submoduleCfg: [],
-          userRemoteConfigs: [[]]
+          userRemoteConfigs: scm.userRemoteConfigs
         ])
       }
     }
