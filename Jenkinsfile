@@ -16,8 +16,17 @@ node {
             inventory: '${WORKSPACE}/inventory',
             playbook: '${WORKSPACE}/bootstrap/playbook.yml',
             colorized: true,
-            credentialsId: '${ansibleCredsId}',
-            forks: '${(ansibleForks as Integer)}'
+            credentialsId: '${ansibleCredsId}'
+            )
+        }
+      }
+      stage ('Base') {
+        ansiColor('xterm') {
+          ansiblePlaybook(
+            inventory: '${WORKSPACE}/inventory',
+            playbook: '${WORKSPACE}/base/playbook.yml',
+            colorized: true,
+            credentialsId: '${ansibleCredsId}'
             )
         }
       }
