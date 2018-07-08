@@ -1,0 +1,12 @@
+[submodule "roles/ansible-apache2"]
+	path = roles/ansible-apache2
+	url = https://github.com/mrlesmithjr/ansible-apache2
+[submodule "roles/ansible-base"]
+	path = roles/ansible-base
+	url = https://github.com/mrlesmithjr/ansible-base
+[submodule "roles/ansible-bootstrap"]
+	path = roles/ansible-bootstrap
+	url = https://github.com/mrlesmithjr/ansible-bootstrap
+[submodule "roles/ansible-mysql"]
+	path = roles/ansible-mysql
+	url = https://github.com/mrlesmithjr/ansible-mysql
