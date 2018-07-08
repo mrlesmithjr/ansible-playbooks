@@ -16,7 +16,8 @@ node {
             inventory: '${WORKSPACE}/inventory',
             playbook: '${WORKSPACE}/bootstrap/playbook.yml',
             colorized: true,
-            credentialsId: "${ansibleCredsId}"
+            credentialsId: "${ansibleCredsId}",
+            forks: "${ansibleForks}"
             )
         }
       }
@@ -26,7 +27,8 @@ node {
             inventory: '${WORKSPACE}/inventory',
             playbook: '${WORKSPACE}/base/playbook.yml',
             colorized: true,
-            credentialsId: "${ansibleCredsId}"
+            credentialsId: "${ansibleCredsId}",
+            forks: "${ansibleForks}"
             )
         }
       }
