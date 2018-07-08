@@ -8,13 +8,12 @@ node {
         checkout scm
       }
       stage ('Bootstrap') {
-        sshagent (credentials: ['vagrant']) {
-          ansiblePlaybook(
-            inventory: '${WORKSPACE}/inventory',
-            playbook: '${WORKSPACE}/bootstrap/playbook.yml',
-            colorized: true
-            )
-        }
+        ansiblePlaybook(
+          inventory: '${WORKSPACE}/inventory',
+          playbook: '${WORKSPACE}/bootstrap/playbook.yml',
+          colorized: true,
+          credentialsId: 'vagrant'
+          )
       }
     }
     catch (err) {
