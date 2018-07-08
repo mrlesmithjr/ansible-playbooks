@@ -1,4 +1,5 @@
 def ansibleCredsId = "a490c6ab-bf59-4e2a-be13-a3ad8678344f"
+def repoUrl = "https://github.com/mrlesmithjr/ansible-playbooks.git"
 
 pipeline {
   agent any
@@ -8,18 +9,18 @@ pipeline {
       steps {
         checkout([
           $class: 'GitSCM',
-          branches: [[name: 'refs/heads/master']],
+          branches: [[name: '*/master']],
           doGenerateSubmoduleConfigurations: false,
           extensions: [[
             $class: 'SubmoduleOption',
             disableSubmodules: false,
-            parentCredentials: true,
+            parentCredentials: false,
             recursiveSubmodules: true,
             reference: '',
-            trackingSubmodules: false
+            trackingSubmodules: true
           ]],
-          submoduleCfg: []
-        ])
+          submoduleCfg: [],
+          userRemoteConfigs: [[url: '${repoUrl}']]])
       }
     }
     stage ("Bootstrap") {
