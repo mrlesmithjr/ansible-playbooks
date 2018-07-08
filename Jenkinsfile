@@ -8,7 +8,11 @@ node {
         checkout scm
       }
       stage ('Bootstrap') {
-        ansible-playbook -i inventory/ bootstrap/playbook.yml
+        ansiblePlaybook(
+          inventory: '${WORKSPACE}/inventory',
+          playbook: '${WORKSPACE}/bootstrap/playbook.yml',
+          colorized: true
+          )
       }
     }
     catch (err) {
