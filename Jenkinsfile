@@ -33,7 +33,7 @@ node {
         ansiColor('xterm') {
           ansiblePlaybook(
             inventory: '${WORKSPACE}/inventory',
-            playbook: '${WORKSPACE}/apache/playbook.yml',
+            playbook: '${WORKSPACE}/apache2/playbook.yml',
             colorized: true,
             credentialsId: "${ansibleCredsId}"
             )
