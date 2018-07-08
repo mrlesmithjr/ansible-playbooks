@@ -1,7 +1,0 @@
----
-- hosts: all
-  become: true
-  vars:
-  roles:
-    - role: ansible-bootstrap
-  tasks:

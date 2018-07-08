@@ -1,5 +1,0 @@
----
-- name: archlinux | Refresh Package Lists
-  pacman:
-    update_cache: true
-  become: true
