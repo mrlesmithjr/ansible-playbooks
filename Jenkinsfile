@@ -1,9 +1,9 @@
 #!/usr/bin/env groovy
 
-def ansibleCredsId = "a490c6ab-bf59-4e2a-be13-a3ad8678344f"
-def ansibleForks = 5
-
 node {
+    def ansibleCredsId = "a490c6ab-bf59-4e2a-be13-a3ad8678344f"
+    def ansibleForks = 5
+
     deleteDir()
 
     try {
