@@ -1,5 +1,5 @@
-def  ansibleCredsId = "a490c6ab-bf59-4e2a-be13-a3ad8678344f"
-def  ansibleInventory = "${WORKSPACE}/inventory"
+def ansibleCredsId = "a490c6ab-bf59-4e2a-be13-a3ad8678344f"
+def ansibleInventory = "${env.WORKSPACE}/inventory"
 
 pipeline {
   agent any
@@ -15,7 +15,7 @@ pipeline {
         ansiColor("xterm") {
           ansiblePlaybook(
             inventory: "${ansibleInventory}",
-            playbook: "${WORKSPACE}/bootstrap/playbook.yml",
+            playbook: "${env.WORKSPACE}/bootstrap/playbook.yml",
             colorized: true,
             credentialsId: "${ansibleCredsId}"
             )
