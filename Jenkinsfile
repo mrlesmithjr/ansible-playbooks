@@ -1,5 +1,4 @@
 def ansibleCredsId = "a490c6ab-bf59-4e2a-be13-a3ad8678344f"
-def repoUrl = "https://github.com/mrlesmithjr/ansible-playbooks.git"
 
 pipeline {
   agent any
@@ -20,7 +19,8 @@ pipeline {
             trackingSubmodules: true
           ]],
           submoduleCfg: [],
-          userRemoteConfigs: [[url: '${repoUrl}']]])
+          userRemoteConfigs: [[]]
+        ])
       }
     }
     stage ("Bootstrap") {
