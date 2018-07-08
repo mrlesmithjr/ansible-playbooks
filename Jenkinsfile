@@ -17,7 +17,43 @@ pipeline {
             playbook: "${env.WORKSPACE}/bootstrap/playbook.yml",
             colorized: true,
             credentialsId: "${ansibleCredsId}"
-            )
+          )
+        }
+      }
+    }
+    stage ("Base") {
+      steps {
+        ansiColor("xterm") {
+          ansiblePlaybook(
+            inventory: "${env.WORKSPACE}/inventory",
+            playbook: "${env.WORKSPACE}/base/playbook.yml",
+            colorized: true,
+            credentialsId: "${ansibleCredsId}"
+          )
+        }
+      }
+    }
+    stage ("Apache") {
+      steps {
+        ansiColor("xterm") {
+          ansiblePlaybook(
+            inventory: "${env.WORKSPACE}/inventory",
+            playbook: "${env.WORKSPACE}/apache2/playbook.yml",
+            colorized: true,
+            credentialsId: "${ansibleCredsId}"
+          )
+        }
+      }
+    }
+    stage ("MySQL") {
+      steps {
+        ansiColor("xterm") {
+          ansiblePlaybook(
+            inventory: "${env.WORKSPACE}/inventory",
+            playbook: "${env.WORKSPACE}/mysql/playbook.yml",
+            colorized: true,
+            credentialsId: "${ansibleCredsId}"
+          )
         }
       }
     }
