@@ -1,9 +1,9 @@
 #!/usr/bin/env groovy
 
-node {
-    def ansibleCredsId = "a490c6ab-bf59-4e2a-be13-a3ad8678344f"
-    def ansibleForks = 5
+def ansibleCredsId = "a490c6ab-bf59-4e2a-be13-a3ad8678344f"
+def ansibleForks = 5
 
+node {
     deleteDir()
 
     try {
@@ -16,7 +16,7 @@ node {
             inventory: '${WORKSPACE}/inventory',
             playbook: '${WORKSPACE}/bootstrap/playbook.yml',
             colorized: true,
-            credentialsId: '${ansibleCredsId}'
+            credentialsId: "${ansibleCredsId}"
             )
         }
       }
@@ -26,7 +26,7 @@ node {
             inventory: '${WORKSPACE}/inventory',
             playbook: '${WORKSPACE}/base/playbook.yml',
             colorized: true,
-            credentialsId: '${ansibleCredsId}'
+            credentialsId: "${ansibleCredsId}"
             )
         }
       }
