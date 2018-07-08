@@ -1,5 +1,8 @@
 #!/usr/bin/env groovy
 
+def ansibleCredsId = "a490c6ab-bf59-4e2a-be13-a3ad8678344f"
+def ansibleForks = 5
+
 node {
     deleteDir()
 
@@ -8,12 +11,15 @@ node {
         checkout scm
       }
       stage ('Bootstrap') {
-        ansiblePlaybook(
-          inventory: '${WORKSPACE}/inventory',
-          playbook: '${WORKSPACE}/bootstrap/playbook.yml',
-          colorized: true,
-          credentialsId: 'a490c6ab-bf59-4e2a-be13-a3ad8678344f'
-          )
+        ansiColor('xterm') {
+          ansiblePlaybook(
+            inventory: '${WORKSPACE}/inventory',
+            playbook: '${WORKSPACE}/bootstrap/playbook.yml',
+            colorized: true,
+            credentialsId: '${ansibleCredsId}',
+            forks: '${ansibleForks}'
+            )
+        }
       }
     }
     catch (err) {
